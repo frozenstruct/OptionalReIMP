@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class OptionalIMPTests: XCTestCase {
+final class OptionalIMPUnwrapTests: XCTestCase {
 
 	func testOptionalUnwrapsToValue() {
 
@@ -41,45 +41,5 @@ final class OptionalIMPTests: XCTestCase {
 		// Assert
 
 		XCTAssertNil(unwrapped)
-	}
-
-	func testOptionalMapsToSome() {
-
-		// Arrange
-
-		var sut: OptionalIMP<Int>
-
-		sut = 10
-
-		let expectedValue = 100
-
-		// Act
-
-		let mapped = sut.map {
-			$0 * 10
-		}
-
-		// Assert
-
-		XCTAssertEqual(mapped, expectedValue)
-	}
-
-	func testOptionalMapsToNil() {
-
-		// Arrange
-
-		var sut: OptionalIMP<Int>
-
-		sut = nil
-
-		// Act
-
-		let mapped = sut.map {
-			$0 * 10
-		}
-
-		// Assert
-
-		XCTAssertNil(mapped)
 	}
 }

@@ -24,4 +24,12 @@ extension OptionalIMP {
 			fatalError("Unexpectedly found nil while unwrapping an optional value")
 		}
 	}
+
+	func forceUnwrap(_ errorText: @autoclosure () -> (String)) -> Wrapped {
+		guard let unwrapped = unwrap() else {
+			fatalError(errorText())
+		}
+
+		return unwrapped
+	}
 }

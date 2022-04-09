@@ -22,4 +22,6 @@ let flatMap = nonIntOpt.flatMap { s -> Int? in
 }
 
 let x = nilOpt~>?
-print("n")
+
+let y: OptionalIMP<Int> = nil
+y ~>!! "NIL FOUND" // results in fatalError with closure text

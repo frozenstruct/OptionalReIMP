@@ -6,11 +6,7 @@
 //
 
 postfix operator ~>!
-postfix func ~>!<U>(_ lhs: OptionalIMP<U>) -> U? {
-	lhs.forceUnwrap()
-}
+
+infix operator ~>!!
 
 postfix operator ~>?
-postfix func ~>?<U>(_ lhs: OptionalIMP<U>) -> U? {
-	lhs.unwrap()
-}
